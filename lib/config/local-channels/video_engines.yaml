@@ -1,0 +1,54 @@
+# OrcaRouter-hosted Kling video engines — CPX local overlay.
+# These engines route through api.orcarouter.ai which proxies Kling's API.
+# Pricing is flat per request (not per second) for all Kling models.
+engines:
+  orcarouter-kling-v2-5-turbo:
+    name: Kling v2.5 Turbo (via OrcaRouter)
+    provider: orcarouter
+    default_model: kling/kling-v2-5-turbo
+    aliases: [kling-v2-5-turbo, kling-turbo]
+    prompt_language: en
+    status: approved
+    capabilities:
+      duration_range: [5, 10]
+      default_duration: 5
+      aspect_ratios: ["16:9", "9:16", "1:1"]
+      resolutions: [720p]
+      max_reference_images: 1
+      default_max_wait_seconds: 600
+    features:
+      text_to_video: true
+      image_to_video: true
+      first_last_frame: false
+      multimodal_reference: false
+      native_audio: false
+    best_for: [fast preview, low-cost iteration, social media clips]
+    strengths: [flat per-request pricing, fast turnaround, English prompts]
+    weaknesses: [720p only, no audio, 5-10s duration range, no first+last frame]
+    cost_tier: low
+    cost_per_request_usd: 0.042
+  orcarouter-kling-v2-master:
+    name: Kling v2 Master (via OrcaRouter)
+    provider: orcarouter
+    default_model: kling/kling-v2-master
+    aliases: [kling-v2-master, kling-master]
+    prompt_language: en
+    status: approved
+    capabilities:
+      duration_range: [5, 10]
+      default_duration: 5
+      aspect_ratios: ["16:9", "9:16", "1:1"]
+      resolutions: [1080p]
+      max_reference_images: 1
+      default_max_wait_seconds: 900
+    features:
+      text_to_video: true
+      image_to_video: true
+      first_last_frame: false
+      multimodal_reference: false
+      native_audio: false
+    best_for: [high-quality final renders, hero shots]
+    strengths: [1080p output, higher visual quality, English prompts]
+    weaknesses: [higher cost, slower generation, no audio]
+    cost_tier: medium
+    cost_per_request_usd: 0.280

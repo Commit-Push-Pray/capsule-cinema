@@ -1,0 +1,15 @@
+# OrcaRouter video generation tools — CPX local overlay.
+version: 2
+tools:
+  OrcaRouterKlingTurboVideoGeneratorTool:
+    module: custom_tools.video_generation.orcarouter_video_generator_tool
+    category: video_generation
+    provider: orcarouter
+    status: approved
+    runtime_engine: orcarouter-kling-v2-5-turbo
+  OrcaRouterKlingMasterVideoGeneratorTool:
+    module: custom_tools.video_generation.orcarouter_video_generator_tool
+    category: video_generation
+    provider: orcarouter
+    status: approved
+    runtime_engine: orcarouter-kling-v2-master
